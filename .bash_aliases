@@ -1,6 +1,6 @@
 # update
-alias update-aliases='curl -sL https://raw.github.com/kraiz/my-dotfiles/master/.bash_aliases > ~/.bash_aliases && source ~/.bash_aliases'
-alias update-tmux='curl -sL https://raw.github.com/kraiz/my-dotfiles/master/.tmux.conf > ~/.tmux.conf && if [ -n "$TMUX" ]; then tmux source-file ~/.tmux.conf; fi'
+alias update-aliases='curl -sL https://raw.githubusercontent.com/mmrose/dotfiles/master/.bash_aliases > ~/.bash_aliases && source ~/.bash_aliases'
+alias update-tmux='curl -sL https://raw.githubusercontent.com/mmrose/dotfiles/master/.tmux.conf > ~/.tmux.conf && if [ -n "$TMUX" ]; then tmux source-file ~/.tmux.conf; fi'
 
 # navigation
 alias c='clear'
