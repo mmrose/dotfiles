@@ -5,7 +5,7 @@ alias update-tmux='curl -sL https://raw.githubusercontent.com/mmrose/dotfiles/ma
 # navigation
 alias c='clear'
 alias r='reset'
-alias ls='ls -lAh --color'
+alias ls='ls -lah --color'
 
 # system
 alias psg='ps aux | grep -v grep | grep -i'
