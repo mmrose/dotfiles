@@ -24,6 +24,7 @@ alias pfg='pip freeze | grep -i'
 # vagrant
 alias v='vagrant'
 alias vs='vagrant ssh'
+alias vu='vagrant up'
 alias vus='vagrant up && vagrant ssh -c "curl -sL https://raw.githubusercontent.com/mmrose/dotfiles/master/.bash_aliases > ~/.bash_aliases" && vagrant ssh'
 alias vrs='vagrant reload && vagrant ssh -c "curl -sL https://raw.githubusercontent.com/mmrose/dotfiles/master/.bash_aliases > ~/.bash_aliases" && vagrant ssh'
 alias vh='vagrant halt'
