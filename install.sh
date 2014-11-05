@@ -1,7 +1,7 @@
 #!/bin/sh
 DOTFILES_DIR=".dotfiles"
 DOTFILES="$HOME/$DOTFILES_DIR"
-GIT_REPO="kraiz/dotfiles"
+GIT_REPO="mmrose/dotfiles"
 GIT_BRANCH="zsh"
 OHMYZSH="$HOME/.oh-my-zsh"
 
