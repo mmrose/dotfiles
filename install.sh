@@ -1,0 +1,71 @@
+#!/bin/sh
+DOTFILES_DIR=".dotfiles"
+DOTFILES="$HOME/$DOTFILES_DIR"
+GIT_REPO="kraiz/dotfiles"
+GIT_BRANCH="zsh"
+OHMYZSH="$HOME/.oh-my-zsh"
+
+## Check for git
+if [ ! -x "$(which git)" ]; then
+    echo "Git not found."
+    exit 1
+fi
+
+## Grab oh-my-zsh
+if [ ! -d "$OHMYZSH" ]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git $OHMYZSH
+fi
+
+## Grab dotfiles
+if [ ! -d "$DOTFILES" ]; then
+    git clone https://github.com/$GIT_REPO.git $DOTFILES
+    cd $DOTFILES
+    git checkout zsh
+    #git submodule init
+else
+    cd $DOTFILES
+    git pull
+fi
+#git submodule update
+cd $HOME
+
+## Create placeholder directories if not already there
+for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.copy"); do
+    DIR_NAME="$(basename ${DIR%.copy})"
+    NEW_DIR="$HOME/.$DIR_NAME"
+    if [ ! -d "$NEW_DIR" ]; then
+        mkdir "$NEW_DIR"
+    fi
+    ## Symlink contents of placeholder directories (if they are directories)
+    if [ -d "$DIR" ]; then
+        for FILE in $(ls $DIR); do
+            NEW_FILE="$NEW_DIR/$FILE"
+            ## If not a symlink already
+            if [ ! -L "$NEW_FILE" ]; then
+                ## If the file exists (just not a symlink), back it up
+                if [ -e "$NEW_FILE" ]; then
+                    echo "Backup: ${NEW_FILE/$HOME/~} -> ${NEW_FILE/$HOME/~}.backup"
+                    mv "$NEW_FILE" "$NEW_FILE.backup"
+                fi
+                ## Create the symlink
+                ln -s "$DIR/$FILE" "$NEW_FILE"
+            fi
+        done
+    fi
+done
+## Symlink all the things!
+for SYMLINK in $(find $DOTFILES -not -iwholename "*.git*" -name "*.symlink"); do
+    BASE_NAME="$(basename ${SYMLINK%.symlink})"
+    NEW_FILE="$HOME/.$BASE_NAME"
+    ## If the new file isn't a symlink
+    if [ ! -L "$NEW_FILE" ]; then
+        ## If the file already exists (just not a symlink), back it up
+        if [ -e "$NEW_FILE" ]; then
+            echo "Backup: $(basename $NEW_FILE) -> $(basename $NEW_FILE).backup"
+            mv "$NEW_FILE" "$NEW_FILE.backup"
+        fi
+        ## Create the symlink
+        ln -s "$SYMLINK" "$NEW_FILE"
+    fi
+done
+exit 0;
