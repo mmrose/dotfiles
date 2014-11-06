@@ -1,0 +1,7 @@
+alias p='python'
+alias pm='python manage.py'
+alias pmr='python manage.py runserver'
+alias pms='python manage.py shell'
+alias pi='pip install'
+alias pf='pip freeze'
+alias pfg='pip freeze | grep -i'
