@@ -2,7 +2,7 @@
 DOTFILES_DIR=".dotfiles"
 DOTFILES="$HOME/$DOTFILES_DIR"
 GIT_REPO="mmrose/dotfiles"
-GIT_BRANCH="zsh"
+GIT_BRANCH="master"
 OHMYZSH="$HOME/.oh-my-zsh"
 
 ## Check for git
@@ -23,7 +23,7 @@ fi
 if [ ! -d "$DOTFILES" ]; then
     git clone https://github.com/$GIT_REPO.git $DOTFILES
     cd $DOTFILES
-    git checkout zsh
+    git checkout $BRANCH
     #git submodule init
 else
     cd $DOTFILES
