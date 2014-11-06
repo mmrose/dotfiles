@@ -12,7 +12,7 @@ if [ ! -x "$(which git)" ]; then
 fi
 
 ## Remove symlinks
-find . -maxdepth 1 -type l -exec zsh -c 'if [[ "$(readlink {})" = $DOTFILES* ]]; then echo "Removing symlink {}"; rm {}; fi' \;
+find $HOME -type l -exec zsh -c 'if [[ "$(readlink {})" = $DOTFILES* ]]; then echo "Removing symlink {}"; rm {}; fi' \;
 
 ## Grab oh-my-zsh
 if [ ! -d "$OHMYZSH" ]; then
@@ -47,7 +47,7 @@ for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.copy"); do
             if [ ! -L "$NEW_FILE" ]; then
                 ## If the file exists (just not a symlink), back it up
                 if [ -e "$NEW_FILE" ]; then
-                    echo "Backup: ${NEW_FILE/$HOME/~} -> ${NEW_FILE/$HOME/~}.backup"
+                    echo "Backup: $NEW_FILE -> $NEW_FILE.backup"
                     mv "$NEW_FILE" "$NEW_FILE.backup"
                 fi
                 ## Create the symlink
@@ -74,7 +74,7 @@ for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.config"); do
             if [ ! -L "$NEW_FILE" ]; then
                 ## If the file exists (just not a symlink), back it up
                 if [ -e "$NEW_FILE" ]; then
-                    #echo "Backup: ${NEW_FILE/$HOME/~} -> ${NEW_FILE/$HOME/~}.backup"
+                    echo "Backup: $NEW_FILE -> $NEW_FILE.backup"
                     mv "$NEW_FILE" "$NEW_FILE.backup"
                 fi
                 ## Create the symlink
