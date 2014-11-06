@@ -11,6 +11,9 @@ if [ ! -x "$(which git)" ]; then
     exit 1
 fi
 
+## Remove symlinks
+find . -maxdepth 1 -type l -exec zsh -c 'if [[ $(readlink {}) = $DOTFILES* ]]; then echo "Removing symlink {}"; rm {}; fi' \;
+
 ## Grab oh-my-zsh
 if [ ! -d "$OHMYZSH" ]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git $OHMYZSH
@@ -48,6 +51,7 @@ for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.copy"); do
                     mv "$NEW_FILE" "$NEW_FILE.backup"
                 fi
                 ## Create the symlink
+                echo "Creating symlink $NEW_FILE"
                 ln -s "$DIR/$FILE" "$NEW_FILE"
             fi
         done
@@ -65,6 +69,7 @@ for SYMLINK in $(find $DOTFILES -not -iwholename "*.git*" -name "*.symlink"); do
             mv "$NEW_FILE" "$NEW_FILE.backup"
         fi
         ## Create the symlink
+        echo "Creating symlink $NEW_FILE"
         ln -s "$SYMLINK" "$NEW_FILE"
     fi
 done
