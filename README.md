@@ -3,13 +3,8 @@ dotfiles
 
 collection of config files
 
-initial:
+Run script:
 ```
-curl -sL https://raw.githubusercontent.com/mmrose/dotfiles/master/.bash_aliases > ~/.bash_aliases && source ~/.bash_aliases
+curl -L https://raw.githubusercontent.com/mmrose/dotfiles/master/install.sh | sh
 ```
 
-updates:
-```
-update-aliases
-update-tmux
-```
