@@ -12,7 +12,7 @@ if [ ! -x "$(which git)" ]; then
 fi
 
 ## Remove symlinks
-find . -maxdepth 1 -type l -exec zsh -c 'if [[ $(readlink {}) = $DOTFILES* ]]; then echo "Removing symlink {}"; rm {}; fi' \;
+find . -maxdepth 1 -type l -exec zsh -c 'if [[ "$(readlink {})" == $DOTFILES* ]]; then echo "Removing symlink {}"; rm {}; fi' \;
 
 ## Grab oh-my-zsh
 if [ ! -d "$OHMYZSH" ]; then
