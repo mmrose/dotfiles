@@ -74,7 +74,7 @@ for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.config"); do
             if [ ! -L "$NEW_FILE" ]; then
                 ## If the file exists (just not a symlink), back it up
                 if [ -e "$NEW_FILE" ]; then
-                    echo "Backup: ${NEW_FILE/$HOME/~} -> ${NEW_FILE/$HOME/~}.backup"
+                    #echo "Backup: ${NEW_FILE/$HOME/~} -> ${NEW_FILE/$HOME/~}.backup"
                     mv "$NEW_FILE" "$NEW_FILE.backup"
                 fi
                 ## Create the symlink
