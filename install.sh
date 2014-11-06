@@ -57,6 +57,34 @@ for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.copy"); do
         done
     fi
 done
+
+
+## Create config directories if not already there
+for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.config"); do
+    DIR_NAME="$(basename ${DIR%.config})"
+    NEW_DIR="$HOME/.config/$DIR_NAME"
+    if [ ! -d "$NEW_DIR" ]; then
+        mkdir "$NEW_DIR"
+    fi
+    ## Symlink contents of placeholder directories (if they are directories)
+    if [ -d "$DIR" ]; then
+        for FILE in $(ls $DIR); do
+            NEW_FILE="$NEW_DIR/$FILE"
+            ## If not a symlink already
+            if [ ! -L "$NEW_FILE" ]; then
+                ## If the file exists (just not a symlink), back it up
+                if [ -e "$NEW_FILE" ]; then
+                    echo "Backup: ${NEW_FILE/$HOME/~} -> ${NEW_FILE/$HOME/~}.backup"
+                    mv "$NEW_FILE" "$NEW_FILE.backup"
+                fi
+                ## Create the symlink
+                echo "Creating symlink $NEW_FILE"
+                ln -s "$DIR/$FILE" "$NEW_FILE"
+            fi
+        done
+    fi
+done
+
 ## Symlink all the things!
 for SYMLINK in $(find $DOTFILES -not -iwholename "*.git*" -name "*.symlink"); do
     BASE_NAME="$(basename ${SYMLINK%.symlink})"
