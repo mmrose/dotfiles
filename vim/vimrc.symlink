@@ -1,3 +1,7 @@
+" pathogen
+execute pathogen#infect()
+execute pathogen#helptags()
+
 " tabs
 set tabstop=4
 set softtabstop=4
