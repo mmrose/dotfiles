@@ -1,4 +1,4 @@
-# tabs
+" tabs
 set tabstop=4
 set softtabstop=4
 set expandtab
@@ -6,4 +6,21 @@ set autoindent
 set copyindent
 set shiftwidth=4
 
+" line handling
 set nowrap
+set backspace=eol,start,indent
+
+" enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" search
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" syntax highlighting
+syntax enable
+colorscheme desert
+set background=dark
