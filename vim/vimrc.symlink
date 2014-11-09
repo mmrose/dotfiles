@@ -43,3 +43,7 @@ set nomodeline
 set cursorline
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" gitgutter
+let g:gitgutter_sign_column_always = 1
+
