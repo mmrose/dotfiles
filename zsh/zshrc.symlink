@@ -5,6 +5,6 @@ export ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
 export LANG="en_US.UTF-8"
 export EDITOR=vim
 
-plugins=(git supervisor)
+plugins=(git supervisor svn vagrant)
 
 source $ZSH/oh-my-zsh.sh
