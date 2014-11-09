@@ -12,7 +12,14 @@ if [ ! -x "$(which git)" ]; then
 fi
 
 ## Remove symlinks
-find $HOME -type l -exec zsh -c 'if [[ "$(readlink {})" = $DOTFILES* ]]; then echo "Removing symlink {}"; rm {}; fi' \;
+for SYMLINK in $(find $HOME -type l); do
+    case $(readlink $SYMLINK) in
+        $DOTFILES*) 
+		echo "Removing symlink $SYMLINK"
+        	rm $SYMLINK
+                ;;
+    esac
+done
 
 ## Grab oh-my-zsh
 if [ ! -d "$OHMYZSH" ]; then
