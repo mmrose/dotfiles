@@ -33,6 +33,7 @@ set wildmenu
 set wildmode=list:full
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title
+set number
 set visualbell
 set nomodeline
 set cursorline
