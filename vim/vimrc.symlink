@@ -24,3 +24,17 @@ set incsearch
 syntax enable
 colorscheme desert
 set background=dark
+
+" vim behaviour
+set hidden
+set nobackup
+set noswapfile
+set wildmenu
+set wildmode=list:full
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title
+set visualbell
+set nomodeline
+set cursorline
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
