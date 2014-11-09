@@ -15,9 +15,9 @@ fi
 for SYMLINK in $(find $HOME -type l); do
     case $(readlink $SYMLINK) in
         $DOTFILES*) 
-		echo "Removing symlink $SYMLINK"
-        	rm $SYMLINK
-                ;;
+            echo "Removing symlink $SYMLINK"
+            rm $SYMLINK
+            ;;
     esac
 done
 
@@ -31,12 +31,12 @@ if [ ! -d "$DOTFILES" ]; then
     git clone https://github.com/$GIT_REPO.git $DOTFILES
     cd $DOTFILES
     git checkout $BRANCH
-    #git submodule init
+    git submodule init
 else
     cd $DOTFILES
     git pull
 fi
-#git submodule update
+git submodule update
 cd $HOME
 
 ## Create placeholder directories if not already there
