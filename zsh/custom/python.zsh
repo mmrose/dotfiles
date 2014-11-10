@@ -11,3 +11,6 @@ if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
     export WORKON_HOME=$HOME/virtualenvs
 fi
+
+# pythonz
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
