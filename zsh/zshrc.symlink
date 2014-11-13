@@ -7,4 +7,6 @@ export EDITOR=vim
 
 plugins=(git supervisor svn vagrant wd)
 
+zstyle ':completion:*' special-dirs true
+
 source $ZSH/oh-my-zsh.sh
