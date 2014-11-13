@@ -1,7 +1,10 @@
 if [[ `hostname` == W4DEUMSY9002045 ]]; then
     export http_proxy="http://proxy.mms-dresden.de:8080"
+    export HTTP_PROXY=$http_proxy
     export https_proxy=$http_proxy
+    export HTTPS_PROXY=$http_proxy
     export ftp_proxy=$http_proxy
+    export FTP_PROXY=$http_proxy
 
     alias np='/cygdrive/c/"Program Files (x86)"/Notepad++/notepad++.exe'
     alias poedit="/cygdrive/c/Program\ Files\ \(x86\)/Poedit/Poedit.exe"
