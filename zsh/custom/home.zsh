@@ -22,4 +22,18 @@ if [[ `hostname` != W4DEUMSY9002045 ]]; then
             fi
         done
     }
+
+    install_dependencies() {
+        if (( $# < 2)); then
+            echo "Need a virtualenv name and at least one python version"
+            return
+        fi
+        # ensure envs are created
+        create_envs $*
+
+        venv_name=$1
+        for i ({2..$#}); do
+            $WORKON_HOME/$venv_name-${(P)i}/bin/pip install -e .
+        done
+    }
 fi
