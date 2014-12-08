@@ -1,6 +1,11 @@
-" pathogen
+set nocompatible
+filetype off
 execute pathogen#infect()
 execute pathogen#helptags()
+colorscheme desert
+set background=dark
+filetype plugin indent on
+syntax on
 
 " tabs
 set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
@@ -14,20 +19,17 @@ set autoindent    " align the new line indent with the previous line
 set nowrap
 set backspace=eol,start,indent
 
-" enable filetype plugins
-filetype plugin on
-filetype indent on
+" Editor layout
+set termencoding=utf-8
+set encoding=utf-8
+set lazyredraw
+set laststatus=2
 
 " search
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-
-" syntax highlighting
-syntax enable
-colorscheme desert
-set background=dark
 
 " vim behaviour
 set hidden
@@ -47,11 +49,5 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " gitgutter
 let g:gitgutter_sign_column_always = 1
 
-" Tmux and Vim navigation
-"let g:tmux_navigator_no_mappings = 1
+let g:tmuxline_powerline_separators = 0
 
-"nnoremap <silent> <c-left> :TmuxNavigateLeft<cr>
-"nnoremap <silent> <c-down> :TmuxNavigateDown<cr>
-"nnoremap <silent> <c-up> :TmuxNavigateUp<cr>
-"nnoremap <silent> <c-right> :TmuxNavigateRight<cr>
-"nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
