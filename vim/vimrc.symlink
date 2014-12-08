@@ -42,12 +42,14 @@ set title
 set number
 set visualbell
 set nomodeline
+set noshowmode
 set cursorline
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " gitgutter
-let g:gitgutter_sign_column_always = 1
+let g:gitgutter_sign_column_always=1
 
-let g:tmuxline_powerline_separators = 0
+let g:airline_theme='wombat'
+let g:tmuxline_powerline_separators=0
 
