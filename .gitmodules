@@ -6,3 +6,9 @@
     path = vim/vim.symlink/bundle/vim-flake8
     url = https://github.com/nvie/vim-flake8.git
     branch = master
+[submodule "vim/vim.symlink/bundle/vim-airline"]
+	path = vim/vim.symlink/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "vim/vim.symlink/bundle/tmuxline"]
+	path = vim/vim.symlink/bundle/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim.git
