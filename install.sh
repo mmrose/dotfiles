@@ -36,7 +36,7 @@ else
     cd $DOTFILES
     git pull
 fi
-git submodule update
+git submodule update --init --recursive
 cd $HOME
 
 ## Create placeholder directories if not already there
