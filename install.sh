@@ -71,7 +71,7 @@ for DIR in $(find $DOTFILES -not -iwholename "*.git*" -name "*.config"); do
     DIR_NAME="$(basename ${DIR%.config})"
     NEW_DIR="$HOME/.config/$DIR_NAME"
     if [ ! -d "$NEW_DIR" ]; then
-        mkdir "$NEW_DIR"
+        mkdir -p "$NEW_DIR"
     fi
     ## Symlink contents of placeholder directories (if they are directories)
     if [ -d "$DIR" ]; then
