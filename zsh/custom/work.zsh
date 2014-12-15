@@ -5,6 +5,7 @@ if [[ `hostname` == W4DEUMSY9002045 ]]; then
     export HTTPS_PROXY=$http_proxy
     export ftp_proxy=$http_proxy
     export FTP_PROXY=$http_proxy
+    unset GREP_OPTIONS
 
     alias np='/cygdrive/c/"Program Files (x86)"/Notepad++/notepad++.exe'
     alias poedit="/cygdrive/c/Program\ Files\ \(x86\)/Poedit/Poedit.exe"
