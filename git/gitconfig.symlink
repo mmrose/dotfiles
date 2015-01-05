@@ -1,5 +1,5 @@
 [core]
-    autocrlf = false
+    autocrlf = true
     eol = lf
 [credential]
     helper = cache --timeout=36000
