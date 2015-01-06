@@ -17,3 +17,13 @@ vdu() {
     vagrant up $1
     vagrant ssh -c "update-dotfiles" $1
 }
+
+vsp() {
+    vagrant up $1
+    vagrant ssh -c 'cat << "EOF" > /home/vagrant/.dotfiles/zsh/custom/local.zsh
+export PATH=/home/vagrant/virtualenv/bin:$PATH
+export STAGE=vagrant
+cd /vagrant
+EOF
+'
+}
