@@ -5,8 +5,18 @@ alias vs='vagrant ssh'
 alias vu='vagrant up'
 alias vus='vagrant up && vagrant ssh'
 alias vr='vagrant reload'
-alias vrs='vagrant reload && vagrant ssh'
 alias vh='vagrant halt'
+
+vus() {
+    vagrant up $1
+    vagrant ssh $1
+}
+
+vrs() {
+    vagrant reload $1
+    vagrant ssh $1
+}
+
 vdi() {
     vagrant up $1
     vagrant ssh -c "curl -L https://raw.githubusercontent.com/mmrose/dotfiles/master/install.sh | sh"  $1
@@ -25,5 +35,5 @@ export PATH=/home/vagrant/virtualenv/bin:$PATH
 export STAGE=vagrant
 cd /vagrant
 EOF
-'
+' $1
 }
