@@ -1,6 +1,11 @@
 [notifications]
 message=true
 
+room.current=true
+
+room=on
+room.text=true
+
 [logging]
 chlog=true
 
@@ -17,4 +22,4 @@ outtype=true
 enabled=true
 
 [connection]
-autoping=30
+autoping=0
