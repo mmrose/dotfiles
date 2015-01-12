@@ -7,28 +7,28 @@ alias vus='vagrant up && vagrant ssh'
 alias vr='vagrant reload'
 alias vh='vagrant halt'
 
-vus() {
+function vus() {
     vagrant up $1
     vagrant ssh $1
 }
 
-vrs() {
+function vrs() {
     vagrant reload $1
     vagrant ssh $1
 }
 
-vdi() {
+function vdi() {
     vagrant up $1
     vagrant ssh -c "curl -L https://raw.githubusercontent.com/mmrose/dotfiles/master/install.sh | sh"  $1
     vagrant ssh -c "sudo chsh -s /bin/zsh vagrant" $1
 }
 
-vdu() {
+function vdu() {
     vagrant up $1
     vagrant ssh -c "update-dotfiles" $1
 }
 
-vsp() {
+function vsp() {
     vagrant up $1
     vagrant ssh -c 'cat << "EOF" > /home/vagrant/.dotfiles/zsh/custom/local.zsh
 export PATH=/home/vagrant/virtualenv/bin:$PATH
