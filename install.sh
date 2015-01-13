@@ -24,6 +24,10 @@ done
 ## Grab oh-my-zsh
 if [ ! -d "$OHMYZSH" ]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git $OHMYZSH
+else
+    cd $OHMYZSH
+    git pull
+    cd $HOME
 fi
 
 ## Grab dotfiles
@@ -108,4 +112,7 @@ for SYMLINK in $(find $DOTFILES -not -iwholename "*.git*" -name "*.symlink"); do
         ln -s "$SYMLINK" "$NEW_FILE"
     fi
 done
+
+vim +PluginInstall +qall
+
 exit 0;
