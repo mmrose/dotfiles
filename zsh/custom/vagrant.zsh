@@ -3,7 +3,6 @@ alias vd='vagrant destroy'
 alias vdf='vagrant destroy -f'
 alias vs='vagrant ssh'
 alias vu='vagrant up'
-alias vus='vagrant up && vagrant ssh'
 alias vr='vagrant reload'
 alias vh='vagrant halt'
 
