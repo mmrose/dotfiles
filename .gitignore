@@ -1,3 +1,4 @@
 .idea*
 *.swp
 zsh/custom/local.zsh
+vim/vim.symlink/bundle/*

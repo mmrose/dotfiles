@@ -1,10 +1,20 @@
 set nocompatible
 filetype off
-execute pathogen#infect()
-execute pathogen#helptags()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'bling/vim-airline'
+Plugin 'nvie/vim-flake8'
+
+call vundle#end()
+filetype plugin indent on
+
 colorscheme desert
 set background=dark
-filetype plugin indent on
 syntax on
 
 " tabs
