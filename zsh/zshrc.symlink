@@ -5,6 +5,8 @@ export ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
 export LANG="de_DE.UTF-8"
 export EDITOR=vim
 
+export DISABLE_AUTO_UPDATE=true
+
 plugins=(git supervisor svn vagrant wd)
 
 zstyle ':completion:*' special-dirs true
