@@ -1,5 +1,6 @@
 alias p='python'
 alias pm='python manage.py'
+alias pmh='python manage.py help'
 alias pmr='python manage.py runserver'
 alias pms='python manage.py shell'
 alias pi='pip install'
