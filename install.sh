@@ -25,7 +25,9 @@ done
 if [ ! -d "$OHMYZSH" ]; then
     git clone https://github.com/robbyrussell/oh-my-zsh.git $OHMYZSH
 else
-    upgrade_oh_my_zsh
+    cd $OHMYZSH
+    git pull
+    cd $HOME
 fi
 
 ## Grab dotfiles
