@@ -2,7 +2,7 @@ if [[ `hostname` != W4DEUMSY9002045 ]]; then
     alias sshpi='ssh pi@raspberrypi.fritz.box'
     alias sshtj='ssh technikjargon.de'
 
-    create_envs() {
+    function create_envs() {
         # $1 is env name, others are python versions
         if (( $# < 2)); then 
             echo "Need a virtualenv name and at least one python version"
@@ -23,7 +23,7 @@ if [[ `hostname` != W4DEUMSY9002045 ]]; then
         done
     }
 
-    install_dependencies() {
+    function install_dependencies() {
         if (( $# < 2)); then
             echo "Need a virtualenv name and at least one python version"
             return
