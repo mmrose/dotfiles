@@ -7,13 +7,11 @@ alias vr='vagrant reload'
 alias vh='vagrant halt'
 
 function vus() {
-    vagrant up $1
-    vagrant ssh $1
+    vagrant up $1 && vagrant ssh $1
 }
 
 function vrs() {
-    vagrant reload $1
-    vagrant ssh $1
+    vagrant reload $1 && vagrant ssh $1
 }
 
 function vdi() {
