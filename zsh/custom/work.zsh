@@ -5,6 +5,10 @@ if [[ `hostname` == W4DEUMSY9002045 ]]; then
     export HTTPS_PROXY=$http_proxy
     export ftp_proxy=$http_proxy
     export FTP_PROXY=$http_proxy
+
+    export VBOX_USER_HOME="C:/Users/$USER/.VirtualBox"
+    export VAGRANT_HOME="C:/Users/$USER/.vagrant.d"
+
     unset GREP_OPTIONS
 
     alias np='/cygdrive/c/"Program Files (x86)"/Notepad++/notepad++.exe'
