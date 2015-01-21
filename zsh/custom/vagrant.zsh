@@ -18,6 +18,7 @@ function vdi() {
     vagrant up $1
     vagrant ssh -c "curl -L https://raw.githubusercontent.com/mmrose/dotfiles/master/install.sh | sh"  $1
     vagrant ssh -c "sudo chsh -s /bin/zsh vagrant" $1
+    vagrant ssh $1
 }
 
 function vdu() {
