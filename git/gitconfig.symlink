@@ -4,6 +4,6 @@
 [credential]
     helper = cache --timeout=846000
 [user]
-	name = Martin Mrose
+    name = Martin Mrose
 [push]
-	default = simple
+    default = upstream
