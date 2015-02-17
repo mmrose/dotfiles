@@ -72,15 +72,17 @@ done
 
 ## Create config directories if not already there
 for MATCH in $(find $DOTFILES -not -iwholename "*.git*" -name "*.config"); do
+    echo "Match: $MATCH"
     BASE_NAME="$(basename ${MATCH%.config})"
     TARGET="$HOME/.config/$BASE_NAME"
     ## Symlink contents of placeholder directories (if they are directories)
     if [ -d "$MATCH" ]; then
+        echo "dir"
         if [ ! -d "$TARGET" ]; then
             mkdir -p "$TARGET"
         fi
         for FILE in $(ls $MATCH); do
-            NEW_FILE="$MATCH/$FILE"
+            NEW_FILE="$TARGET/$FILE"
             ## If not a symlink already
             if [ ! -L "$NEW_FILE" ]; then
                 ## If the file exists (just not a symlink), back it up
@@ -94,6 +96,7 @@ for MATCH in $(find $DOTFILES -not -iwholename "*.git*" -name "*.config"); do
             fi
         done
     else
+        echo "file"
         ## If not symlink already
         if [ ! -L "$TARGET" ]; then
             ## Backup if file exists
