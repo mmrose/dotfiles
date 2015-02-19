@@ -20,11 +20,13 @@ if [[ `hostname` == W4DEUMSY9002045 ]]; then
         tmux send-keys 'vagrant ssh app -- -t "cd /usr/local/*suite*; mediasuite/bin/manage runcelery worker -l fatal" ";" exec /bin/bash' C-m
     }
     vws() {
-        tmux send-keys 'vagrant ssh app -- -t "cd /usr/local/*suite*; webcastsuite/bin/manage runserver 8100" ";" exec /bin/bash' C-m
+        tmux send-keys 'vagrant ssh app -- -t "cd /usr/local/*suite*; webcastsuite/bin/manage runserver 8100" ";" exec /bin/zsh' C-m
         tmux split-window
-        tmux send-keys "cd $PWD" C-m 'vagrant ssh app -- -t "cd /usr/local/*suite*; webcastsuite/bin/manage runcelery worker -Q celery -l fatal" ";" exec /bin/bash' C-m
+        tmux send-keys "cd $PWD" C-m 'vagrant ssh app -- -t "cd /usr/local/*suite*; webcastsuite/bin/manage runcelery beat --schedule=/vagrant/celerybeat-schedule.db --pidfile=/vagrant/celery_beat.pid" ";" exec /bin/zsh' C-m
         tmux split-window
-        tmux send-keys "cd $PWD" C-m 'vagrant ssh app -- -t "cd /usr/local/*suite*; webcastsuite/bin/manage runcelery worker -BQ highprio -l fatal -n highprio@%h" ";" exec /bin/bash' C-m
+        tmux send-keys "cd $PWD" C-m 'vagrant ssh app -- -t "cd /usr/local/*suite*; webcastsuite/bin/manage runcelery worker -Q highprio -l fatal -n highprio@%h" ";" exec /bin/bash' C-m
+        tmux split-window
+        tmux send-keys "cd $PWD" C-m 'vagrant ssh app -- -t "cd /usr/local/*suite*; webcastsuite/bin/manage runcelery worker -Q celery -l fatal" ";" exec /bin/zsh' C-m
     }
     vwsi() {
         tmux send-keys 'vagrant ssh dmz -- -t "cd /usr/local/*suite*; wsi/bin/manage runserver 8200" ";" exec /bin/bash' C-m
