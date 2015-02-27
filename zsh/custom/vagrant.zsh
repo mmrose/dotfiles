@@ -20,6 +20,11 @@ function vdi() {
     vagrant ssh -c "sudo chsh -s /bin/zsh vagrant" $1
 }
 
+function vdis() {
+    vdi $1
+    vagrant ssh $1
+}
+
 function vdu() {
     vagrant up $1
     vagrant ssh -c "update-dotfiles" $1
