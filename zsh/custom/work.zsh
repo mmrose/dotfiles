@@ -17,6 +17,8 @@ if [[ `hostname` == W4DEUMSY9002045 ]]; then
     vms() {
         tmux send-keys 'vagrant ssh app -- -t "cd /usr/local/*suite*; mediasuite/bin/manage runserver 8000" ";" exec /bin/zsh' C-m
         tmux split-window
+        tmux send-keys "cd $PWD" C-m 'vagrant ssh app -- -t "cd /usr/local/*suite*; mediasuite/bin/manage runcelery beat --schedule=/vagrant/celerybeat-schedule.db --pidfile=/vagrant/celery_beat.pid" ";" exec /bin/zsh' C-m
+        tmux split-window
         tmux send-keys "cd $PWD" C-m 'vagrant ssh app -- -t "cd /usr/local/*suite*; mediasuite/bin/manage runcelery worker -l fatal" ";" exec /bin/zsh' C-m
     }
     vws() {
