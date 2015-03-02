@@ -67,3 +67,5 @@ let g:gitgutter_sign_column_always=1
 let g:airline_theme='wombat'
 let g:tmuxline_powerline_separators=0
 
+" Auto call flake8
+autocmd BufWritePost *.py call Flake8()
