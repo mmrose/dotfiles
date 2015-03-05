@@ -6,8 +6,8 @@ if [[ `hostname` == W4DEUMSY9002045 ]]; then
     export ftp_proxy=$http_proxy
     export FTP_PROXY=$http_proxy
 
-    export VBOX_USER_HOME="C:/Users/$USER/.VirtualBox"
-    export VAGRANT_HOME="C:/Users/$USER/.vagrant.d"
+    export VBOX_USER_HOME="C:/Develop/VMs"
+    export VAGRANT_HOME="C:/Develop/VMs/.vagrant.d"
 
     unset GREP_OPTIONS
 
