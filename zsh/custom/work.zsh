@@ -43,4 +43,8 @@ if [[ "`id -nu`" == "vagrant" ]]; then
         export PATH=~/virtualenv/bin:$PATH
         cd /vagrant
     fi
+
+    if [[ -x /opt/flowplayer ]]; then
+        cd /vagrant/flash-build
+    fi
 fi
