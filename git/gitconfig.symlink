@@ -7,3 +7,7 @@
     name = Martin Mrose
 [push]
     default = tracking
+
+# include data not shared in my dotfiles
+[include]
+    path = ~/.gitconfig.local
