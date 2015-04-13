@@ -39,6 +39,10 @@ fi
 
 if [[ "`id -nu`" == "vagrant" ]]; then
     export STAGE=vagrant
+    if [[ -x /opt/python/bin/python ]]; then
+        export PATH=/opt/python/bin:$PATH
+        cd /vagrant
+    fi
     if [[ -x ~/virtualenv/bin/pyrun ]]; then
         export PATH=~/virtualenv/bin:$PATH
         cd /vagrant
