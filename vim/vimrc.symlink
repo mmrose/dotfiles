@@ -68,4 +68,4 @@ let g:airline_theme='wombat'
 let g:tmuxline_powerline_separators=0
 
 " Auto call flake8
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call Flake8()
