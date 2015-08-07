@@ -1,7 +1,7 @@
 if [[ `hostname` != W4DEUMSY9002045 ]]; then
-    alias sshpis='ssh pi@pi-storage.fritz.box'
-    alias sshpib='ssh pi@pi-backup.fritz.box'
-    alias sshpibw='ssh pi@pi-backup-wlan.fritz.box'
+    alias sshpis='ssh pi@pi-storage.lan'
+    alias sshpib='ssh pi@pi-backup.lan'
+    alias sshpibw='ssh pi@pi-backup-wlan.lan'
     alias sshtj='ssh technikjargon.de'
 
     function create_envs() {
