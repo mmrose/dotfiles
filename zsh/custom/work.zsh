@@ -16,12 +16,16 @@ if [[ `hostname` == W4DEUMSY9002045 ]]; then
 fi
 
 if [[ "`id -nu`" == "vagrant" ]]; then
-    alias msm="/usr/local/*/mediasuite/bin/manage"
+    MSM=`echo /**/usr/local/*/mediasuite/bin/manage`
+    WSM=`echo /**/usr/local/*/webcastsuite/bin/manage`
+
+
+    alias msm=$MSM
     alias msr="while true; do msm runserver 8000; sleep 2; done"
     alias msc="msm runcelery worker -BQ celery -l info --autoreload"
     alias msp="/usr/local/*/mediasuite/bin/pip"
 
-    alias wsm="/usr/local/*/webcastsuite/bin/manage"
+    alias wsm=$WSM
     alias wsr="while true; do wsm runserver 8100; sleep 2; done"
     alias wsc="wsm runcelery worker -BQ celery,highprio -l info --autoreload"
     alias wsp="/usr/local/*/webcastsuite/bin/pip"
