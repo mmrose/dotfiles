@@ -18,6 +18,7 @@ fi
 if [[ "`id -nu`" == "vagrant" ]]; then
     MSM=`echo /**/usr/local/*/mediasuite/bin/manage`
     WSM=`echo /**/usr/local/*/webcastsuite/bin/manage`
+    SCTL=`echo /**/usr/local/*/supervisor/bin/supervisorctl`
 
 
     alias msm=$MSM
@@ -34,7 +35,7 @@ if [[ "`id -nu`" == "vagrant" ]]; then
     alias wsir="while true; do wsim runserver 8200; sleep 2; done"
     alias wsip="/usr/local/*/wsi/bin/pip"
 
-    alias sctl="/usr/local/*/supervisor/bin/supervisorctl"
+    alias sctl=$SCTL
 
     export STAGE=vagrant
     cd /vagrant 
