@@ -16,6 +16,16 @@ if [[ `hostname` == W4DEUMSY9002045 ]]; then
 fi
 
 if [[ "`id -nu`" == "vagrant" ]]; then
+    export STAGE=vagrant
+    cd /vagrant
+
+    if [[ -x /opt/python/bin/python ]]; then
+        export PATH=/opt/python/bin:$PATH
+    fi
+    if [[ -x ~/virtualenv/bin/pyrun ]]; then
+        export PATH=~/virtualenv/bin:$PATH
+    fi
+
     MSM=`echo /**/usr/local/*/mediasuite/bin/manage`
     WSM=`echo /**/usr/local/*/webcastsuite/bin/manage`
     SCTL=`echo /**/usr/local/*/supervisor/bin/supervisorctl`
@@ -36,14 +46,4 @@ if [[ "`id -nu`" == "vagrant" ]]; then
     alias wsip="/usr/local/*/wsi/bin/pip"
 
     alias sctl=$SCTL
-
-    export STAGE=vagrant
-    cd /vagrant 
-
-    if [[ -x /opt/python/bin/python ]]; then
-        export PATH=/opt/python/bin:$PATH
-    fi
-    if [[ -x ~/virtualenv/bin/pyrun ]]; then
-        export PATH=~/virtualenv/bin:$PATH
-    fi
 fi
