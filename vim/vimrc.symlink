@@ -22,6 +22,8 @@ colorscheme desert
 set background=dark
 syntax on
 
+let leader="^"
+
 " tabs
 set nowrap
 set tabstop=4
