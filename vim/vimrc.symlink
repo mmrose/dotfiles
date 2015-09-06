@@ -71,12 +71,6 @@ let g:gitgutter_sign_column_always=1
 let g:airline_theme='wombat'
 let g:tmuxline_powerline_separators=0
 
-
-" fugitiv git commands
-nmap :ga :Git add %:p<CR><CR>
-"nnoremap <leader>gs :Gstatus<CR>
-"nnoremap <leader>gc :Gcommit -v -q<CR>
-
 " put nerdtree on ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
