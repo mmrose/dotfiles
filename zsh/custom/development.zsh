@@ -11,6 +11,7 @@ function upr() {
         if [[ -d '.git' ]]; then
             git pull
         elif [[ -d '.svn' ]]; then
+            svn cleanup
             svn up
         else
             upr
