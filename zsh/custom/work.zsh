@@ -28,6 +28,7 @@ if [[ "`id -nu`" == "vagrant" ]]; then
 
     MSM=`echo /**/usr/local/*/mediasuite/bin/manage`
     WSM=`echo /**/usr/local/*/webcastsuite/bin/manage`
+    WSIM=`echo /**/usr/local/*/webcastsuite/bin/manage`
     SCTL=`echo /**/usr/local/*/supervisor/bin/supervisorctl`
 
 
@@ -41,7 +42,7 @@ if [[ "`id -nu`" == "vagrant" ]]; then
     alias wsc="wsm runcelery worker -BQ celery,highprio -l info --autoreload"
     alias wsp="/usr/local/*/webcastsuite/bin/pip"
 
-    alias wsim="/usr/local/*/wsi/bin/manage"
+    alias wsim=$WSIM
     alias wsir="while true; do wsim runserver 8200; sleep 2; done"
     alias wsip="/usr/local/*/wsi/bin/pip"
 
