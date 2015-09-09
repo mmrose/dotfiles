@@ -28,7 +28,7 @@ if [[ "`id -nu`" == "vagrant" ]]; then
 
     MSM=`echo /**/usr/local/*/mediasuite/bin/manage`
     WSM=`echo /**/usr/local/*/webcastsuite/bin/manage`
-    WSIM=`echo /**/usr/local/*/webcastsuite/bin/manage`
+    WSIM=`echo /**/usr/local/*/wsi/bin/manage`
     SCTL=`echo /**/usr/local/*/supervisor/bin/supervisorctl`
 
 
