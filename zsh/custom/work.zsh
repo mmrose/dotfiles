@@ -32,19 +32,19 @@ if [[ "`id -nu`" == "vagrant" ]]; then
     SCTL=`echo /**/usr/local/*/supervisor/bin/supervisorctl`
 
 
-    alias msm="$MSB/manage"
+    alias msm=$MSB/manage
     alias msr="while true; do msm runserver 8000; sleep 2; done"
     alias msc="msm runcelery worker -BQ celery -l info --autoreload"
-    alias msp="$MSB/pip"
+    alias msp=$MSB/pip
 
-    alias wsm="$WSB/manage"
+    alias wsm=$WSB/manage
     alias wsr="while true; do wsm runserver 8100; sleep 2; done"
     alias wsc="wsm runcelery worker -BQ celery,highprio -l info --autoreload"
-    alias wsp="$WSB/pip"
+    alias wsp=$WSB/pip
 
-    alias wsim=$WSIM
+    alias wsim=$WSIP/manage
     alias wsir="while true; do wsim runserver 8200; sleep 2; done"
-    alias wsip="$WSB/pip"
+    alias wsip=$WSB/pip
 
     alias sctl=$SCTL
 fi
