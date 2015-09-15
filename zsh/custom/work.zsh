@@ -26,25 +26,25 @@ if [[ "`id -nu`" == "vagrant" ]]; then
         export PATH=~/virtualenv/bin:$PATH
     fi
 
-    MSM=`echo /**/usr/local/*/mediasuite/bin/manage`
-    WSM=`echo /**/usr/local/*/webcastsuite/bin/manage`
-    WSIM=`echo /**/usr/local/*/wsi/bin/manage`
+    MSB=`echo /**/usr/local/*/mediasuite/bin`
+    WSB=`echo /**/usr/local/*/webcastsuite/bin`
+    WSIB=`echo /**/usr/local/*/wsi/bin`
     SCTL=`echo /**/usr/local/*/supervisor/bin/supervisorctl`
 
 
-    alias msm=$MSM
+    alias msm="$MSB/manage"
     alias msr="while true; do msm runserver 8000; sleep 2; done"
     alias msc="msm runcelery worker -BQ celery -l info --autoreload"
-    alias msp="/usr/local/*/mediasuite/bin/pip"
+    alias msp="$MSB/pip"
 
-    alias wsm=$WSM
+    alias wsm="$WSB/manage"
     alias wsr="while true; do wsm runserver 8100; sleep 2; done"
     alias wsc="wsm runcelery worker -BQ celery,highprio -l info --autoreload"
-    alias wsp="/usr/local/*/webcastsuite/bin/pip"
+    alias wsp="$WSB/pip"
 
     alias wsim=$WSIM
     alias wsir="while true; do wsim runserver 8200; sleep 2; done"
-    alias wsip="/usr/local/*/wsi/bin/pip"
+    alias wsip="$WSB/pip"
 
     alias sctl=$SCTL
 fi
