@@ -12,7 +12,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nvie/vim-flake8'
 
 call vundle#end()
@@ -72,7 +73,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 let g:gitgutter_sign_column_always=1
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
+let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 let g:tmuxline_powerline_separators = 1
 let g:tmuxline_preset = {
