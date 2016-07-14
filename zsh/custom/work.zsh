@@ -39,7 +39,7 @@ if [[ "`id -nu`" == "vagrant" ]]; then
 
     alias wsm=$WSB/manage
     alias wsr="while true; do wsm runserver 8100; sleep 2; done"
-    alias wsc="wsm runcelery worker -BQ celery,highprio -l info --autoreload"
+    alias wsc="wsm runcelery worker -BQ celery,highprio,statistics,ial -l info --autoreload"
     alias wsp=$WSB/pip
 
     alias wsim=$WSIB/manage
