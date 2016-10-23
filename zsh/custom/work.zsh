@@ -1,16 +1,17 @@
-if [[ `hostname` == W4DEUMSY9002045 ]]; then
-    function set_proxy() {
-        export http_proxy="http://proxy.mms-dresden.de:8080"
-        export HTTP_PROXY=$http_proxy
-        export https_proxy=$http_proxy
-        export HTTPS_PROXY=$http_proxy
-        export ftp_proxy=$http_proxy
-        export FTP_PROXY=$http_proxy
-    }
+function set_proxy() {
+    export http_proxy="http://proxy.mms-dresden.de:8080"
+    export HTTP_PROXY=$http_proxy
+    export https_proxy=$http_proxy
+    export HTTPS_PROXY=$http_proxy
+    export ftp_proxy=$http_proxy
+    export FTP_PROXY=$http_proxy
+}
 
-    function unset_proxy() {
-        unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
-    }
+function unset_proxy() {
+    unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+}
+
+if [[ `hostname` == W4DEUMSY9002045 ]]; then
 
     set_proxy
 
