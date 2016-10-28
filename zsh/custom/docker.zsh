@@ -1,1 +1,1 @@
-alias dcup="docker-compose up --build"
+alias dcub="docker-compose up --build"
