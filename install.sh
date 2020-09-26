@@ -5,10 +5,10 @@ GIT_REPO="mmrose/dotfiles"
 GIT_BRANCH="master"
 OHMYZSH="$HOME/.oh-my-zsh"
 
-## Check for git
-if [ ! -x "$(which git)" ]; then
-    echo "Git not found."
-    exit 1
+## Check for git and curl
+if ! [ -x "$(command -v git)" ] || ! [ -x "$(command -v curl)" ]; then
+  echo 'Install both: git and curl.' >&2
+  exit 1
 fi
 
 ## Remove symlinks
