@@ -232,6 +232,7 @@ if [ -x "$(command -v npm)" ]; then
   npm config set prefix ~/.npm-packages
 fi
 
+mkdir -p ~/.config/htop
 cat <<-"EOF" > ~/.config/htop/htoprc
 # Beware! This file is rewritten by htop when settings are changed in the interface.
 # The parser is also very primitive, and not human-friendly.
