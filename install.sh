@@ -33,6 +33,8 @@ cat <<-"EOF" > ~/.zshrc
 
 # basics
 export EDITOR='vim'
+# fixing zsh issues in tmux
+bindkey -e
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 export PATH="$HOME/.local/bin:$HOME/.npm-packages/bin:$PATH"
