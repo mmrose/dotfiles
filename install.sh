@@ -8,7 +8,7 @@ if ! [ -x "$(command -v git)" ] || ! [ -x "$(command -v curl)" ]; then
   exit 1
 fi
 
-## Grab oh-my-zsh
+## Remove omz if present
 if [ -d "~/.oh-my-zsh" ]; then
     rm -rf ~/.oh-my-zsh
     ## Remove symlinks
@@ -110,6 +110,7 @@ zinit $load bric3/nice-exit-code
 export RPS1='%B%F{red}$(nice_exit_code)%f%b'
 
 zstyle :prompt:pure:path   color        cyan
+zstyle ':completion:*'     special-dirs true
 EOF
 
 # tmux
