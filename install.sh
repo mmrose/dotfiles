@@ -109,6 +109,8 @@ zinit $load zdharma/fast-syntax-highlighting
 zinit $load bric3/nice-exit-code
 export RPS1='%B%F{red}$(nice_exit_code)%f%b'
 
+zinit snippet OMZ::lib/completion.zsh
+
 zstyle :prompt:pure:path   color        cyan
 zstyle ':completion:*'     special-dirs true
 EOF
