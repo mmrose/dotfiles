@@ -65,7 +65,7 @@ alias nsl='netstat -taupn | grep LISTEN'
 alias nsg='netstat -taupn | grep -i'
 
 # update shell
-alias update-dotfiles="curl -sL https://github.com/mmrose/.dotfiles/raw/master/install.sh | zsh"
+alias update-dotfiles="curl -sL https://github.com/mmrose/.dotfiles/raw/master/install.sh | sh"
 
 # plugin stuff
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:=~/.cache}
