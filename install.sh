@@ -113,6 +113,10 @@ zinit snippet OMZ::lib/completion.zsh
 
 zstyle :prompt:pure:path   color        cyan
 zstyle ':completion:*'     special-dirs true
+
+if [ -f ~/.zsh_alias_local ]; then
+    source ~/.zsh_alias_local
+fi
 EOF
 
 # tmux
