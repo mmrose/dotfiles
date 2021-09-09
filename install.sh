@@ -114,6 +114,9 @@ zinit snippet OMZ::lib/completion.zsh
 zstyle :prompt:pure:path   color        cyan
 zstyle ':completion:*'     special-dirs true
 
+# add kubectl completions
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
 if [ -f ~/.zsh_alias_local ]; then
     source ~/.zsh_alias_local
 fi
