@@ -117,6 +117,13 @@ zstyle ':completion:*'     special-dirs true
 # add kubectl completions
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
+# npm
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:$NPM_PACKAGES/bin"
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
 if [ -f ~/.zsh_alias_local ]; then
     source ~/.zsh_alias_local
 fi
@@ -241,6 +248,7 @@ EOF
 
 # npm
 if [ -x "$(command -v npm)" ]; then
+  mkdir -p ~/.npm-packages
   npm config set prefix ~/.npm-packages
 fi
 
