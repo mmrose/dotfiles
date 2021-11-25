@@ -76,7 +76,7 @@ ZPLGM[HOME_DIR]=$ZPLG_HOME
 ZPLGM[ZCOMPDUMP_PATH]=$XDG_CACHE_HOME/zsh/zcompdump
 
 if [[ ! -f $ZPLG_HOME/bin/zinit.zsh ]]; then
-  git clone https://github.com/zdharma/zinit.git $ZPLG_HOME/bin
+  git clone https://github.com/zdharma-continuum/zinit.git $ZPLG_HOME/bin
   zcompile $ZPLG_HOME/bin/zinit.zsh
 fi
 source $ZPLG_HOME/bin/zinit.zsh
