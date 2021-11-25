@@ -103,7 +103,7 @@ zinit ice blockf; zinit $load zsh-users/zsh-completions
 
 # syntax highlighting
 zinit ice silent wait!1 atload"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit"
-zinit $load zdharma/fast-syntax-highlighting
+zinit $load zdharma-continuum/fast-syntax-highlighting
 
 # Print command exit code as a human-readable string
 zinit $load bric3/nice-exit-code
